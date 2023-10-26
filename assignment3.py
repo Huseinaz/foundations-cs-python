@@ -11,3 +11,8 @@ def displayMenu():
         +"\t7. Exit\n")
 
 displayMenu()
+
+def menu():
+  choice = eval(input("\nChoose a number from the menu: "))
+  
+menu()
