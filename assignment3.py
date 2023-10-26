@@ -14,5 +14,7 @@ displayMenu()
 
 def menu():
   choice = eval(input("\nChoose a number from the menu: "))
+  if choice == 1:
+    print("Add Matrices")
   
 menu()
