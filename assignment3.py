@@ -3,6 +3,7 @@ def addMatrices():
   matrix2 = []
   num_rows = int(input("Enter the number of rows: "))
   num_cols = int(input("Enter the number of columns: "))
+  sum_matrix = []
   
   for row in range(num_rows):
     matrix1.append([])
@@ -10,7 +11,6 @@ def addMatrices():
     for col in range(num_cols):
       col = int(input())
       matrix1[row].append(col)
-  print(matrix1)
 
   for row in range(num_rows):
     matrix2.append([])
@@ -18,7 +18,12 @@ def addMatrices():
     for col in range(num_cols):
       col = int(input())
       matrix2[row].append(col)
-  print(matrix2)
+
+  for row in range(num_rows):
+    sum_row = [matrix1[row][col] + matrix2[row][col] for col in range(num_cols)]
+    sum_matrix.append(sum_row)
+
+  print(matrix1,"+",matrix2,"=",sum_matrix)
 
 
 name = input("Please enter your name: ")
