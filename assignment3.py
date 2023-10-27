@@ -1,3 +1,17 @@
+def addMatrices():
+  matrix1 = []
+  num_rows = int(input("Enter the number of rows: "))
+  num_cols = int(input("Enter the number of columns: "))
+  
+  for row in range(num_rows):
+    matrix1.append([])
+    print("Enter elements of row",row+1,"of the first matrix:")
+    for col in range(num_cols):
+      col = int(input())
+      matrix1[row].append(col)
+    print(matrix1)
+
+
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
 
@@ -15,6 +29,6 @@ displayMenu()
 def menu():
   choice = eval(input("\nChoose a number from the menu: "))
   if choice == 1:
-    print("Add Matrices")
+    addMatrices()
   
 menu()
