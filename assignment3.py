@@ -1,5 +1,6 @@
 def addMatrices():
   matrix1 = []
+  matrix2 = []
   num_rows = int(input("Enter the number of rows: "))
   num_cols = int(input("Enter the number of columns: "))
   
@@ -9,7 +10,15 @@ def addMatrices():
     for col in range(num_cols):
       col = int(input())
       matrix1[row].append(col)
-    print(matrix1)
+  print(matrix1)
+
+  for row in range(num_rows):
+    matrix2.append([])
+    print("Enter elements of row",row+1,"of the second matrix:")
+    for col in range(num_cols):
+      col = int(input())
+      matrix2[row].append(col)
+  print(matrix2)
 
 
 name = input("Please enter your name: ")
