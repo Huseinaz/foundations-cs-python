@@ -39,6 +39,17 @@ def invertDictionary():
   print("Before inverting:")
   print(dict)
 
+  inverted_dict = {}
+  
+  for key,value in dict.items():
+    if value not in inverted_dict:
+      inverted_dict[value] = [key]
+    else:
+      inverted_dict[value].append(key)
+
+  print("After inverting:")
+  print(inverted_dict)
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
