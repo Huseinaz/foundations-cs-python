@@ -25,6 +25,20 @@ def addMatrices():
 
   print(matrix1,"+",matrix2,"=",sum_matrix)
 
+######################################################################################
+
+def invertDictionary():
+  dict = {}
+  num_entries = int(input("Enter the number of dictionary entries: "))
+
+  for i in range(num_entries):
+    key = input("Enter a key: ")
+    value = input("Enter a value: ")
+    dict[key] = value
+  
+  print("Before inverting:")
+  print(dict)
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
@@ -47,5 +61,5 @@ def menu():
   elif choice == 2:
     print("Check Rotation")
   elif choice == 3:
-    print("Invert Dictionary")
+    invertDictionary()
 menu()
