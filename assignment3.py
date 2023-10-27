@@ -44,5 +44,7 @@ def menu():
   choice = eval(input("\nChoose a number from the menu: "))
   if choice == 1:
     addMatrices()
+  elif choice == 2:
+    print("Check Rotation")
   
 menu()
