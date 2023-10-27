@@ -46,5 +46,6 @@ def menu():
     addMatrices()
   elif choice == 2:
     print("Check Rotation")
-  
+  elif choice == 3:
+    print("Invert Dictionary")
 menu()
