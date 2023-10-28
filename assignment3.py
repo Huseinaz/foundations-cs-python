@@ -73,4 +73,6 @@ def menu():
     print("Check Rotation")
   elif choice == 3:
     invertDictionary()
+  elif choice == 4:
+    print("Convert Matrix to Dictionary")
 menu()
