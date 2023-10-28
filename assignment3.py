@@ -95,4 +95,6 @@ def menu():
     invertDictionary()
   elif choice == 4:
     matrixToDictionary()
+  elif choice == 5:
+    print("Check Palindrome")
 menu()
