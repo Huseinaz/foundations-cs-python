@@ -107,4 +107,6 @@ def menu():
     matrixToDictionary()
   elif choice == 5:
     checkPalindrome()
+  elif choice == 6:
+    print("Search for an Element & Merge Sort")
 menu()
