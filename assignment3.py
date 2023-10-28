@@ -73,9 +73,12 @@ def matrixToDictionary():
 ######################################################################################
 
 def checkPalindrome():
-  text = input("Enter the text to reverse: ")
+  text = input("Enter a text to check if it's palindrome: ")
   reversed_text = text[::-1]
-  print(reversed_text)
+  if reversed_text == text:
+    print(text,"is a palindrome")
+  else:
+    print(text,"is not a palindrome")
 
 
 name = input("Please enter your name: ")
