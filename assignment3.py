@@ -50,7 +50,7 @@ def invertDictionary():
   print("After inverting:")
   print(inverted_dict)
 
-  ######################################################################################
+######################################################################################
 
 def matrixToDictionary():
   users_data = []
@@ -69,6 +69,13 @@ def matrixToDictionary():
     users_dict[id] = [firstName, lastName, jobTitle, company]
 
   print(users_dict)
+
+######################################################################################
+
+def checkPalindrome():
+  text = input("Enter the text to reverse: ")
+  reversed_text = text[::-1]
+  print(reversed_text)
 
 
 name = input("Please enter your name: ")
@@ -96,5 +103,5 @@ def menu():
   elif choice == 4:
     matrixToDictionary()
   elif choice == 5:
-    print("Check Palindrome")
+    checkPalindrome()
 menu()
