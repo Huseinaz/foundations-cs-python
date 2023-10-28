@@ -55,16 +55,20 @@ def invertDictionary():
 def matrixToDictionary():
   users_data = []
   num_users = int(input("Enter the number of the users: "))
+  users_dict = {}
 
   for row in range(num_users):
-    print("User",row)
+    print("User",row+1)
     firstName = input("Enter the first name: ")
     lastName = input("Enter the last name: ")
     id = input("Enter the id: ")
     jobTitle = input("Enter the job title: ")
     company = input("Enter the company: ")
     users_data.append([firstName, lastName, id, jobTitle, company])
-  print(users_data)
+  
+    users_dict[id] = [firstName, lastName, jobTitle, company]
+
+  print(users_dict)
 
 
 name = input("Please enter your name: ")
