@@ -126,23 +126,27 @@ def displayMenu():
         +"\t6. Search for an Element & Merge Sort\n"
         +"\t7. Exit\n")
 
-displayMenu()
-
 def menu():
-  choice = eval(input("\nChoose a number from the menu: "))
-  if choice == 1:
-    addMatrices()
-  elif choice == 2:
-    print("Check Rotation")
-  elif choice == 3:
-    invertDictionary()
-  elif choice == 4:
-    matrixToDictionary()
-  elif choice == 5:
-    checkPalindrome()
-  elif choice == 6:
-    user_input = input("Enter a list of numbers separated by commas: ")
-    arr = user_input.split(',')
-    mergeSort(arr)
-    print("Sorted list:", arr)
+  choice = 0
+  while choice != 7:
+    displayMenu()
+    choice = eval(input("\nChoose a number from the menu: "))
+    if choice == 1:
+      addMatrices()
+    elif choice == 2:
+      print("Check Rotation")
+    elif choice == 3:
+      invertDictionary()
+    elif choice == 4:
+      matrixToDictionary()
+    elif choice == 5:
+      checkPalindrome()
+    elif choice == 6:
+      user_input = input("Enter a list of numbers separated by commas: ")
+      arr = user_input.split(',')
+      mergeSort(arr)
+      print("Sorted list:", arr)
+    elif choice != 7:
+      print("\nError! Invalid input!\n")
+  print("You exit the menu")
 menu()
