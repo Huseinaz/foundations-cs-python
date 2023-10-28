@@ -50,6 +50,22 @@ def invertDictionary():
   print("After inverting:")
   print(inverted_dict)
 
+  ######################################################################################
+
+def matrixToDictionary():
+  users_data = []
+  num_users = int(input("Enter the number of the users: "))
+
+  for row in range(num_users):
+    print("User",row)
+    firstName = input("Enter the first name: ")
+    lastName = input("Enter the last name: ")
+    id = input("Enter the id: ")
+    jobTitle = input("Enter the job title: ")
+    company = input("Enter the company: ")
+    users_data.append([firstName, lastName, id, jobTitle, company])
+  print(users_data)
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
@@ -74,5 +90,5 @@ def menu():
   elif choice == 3:
     invertDictionary()
   elif choice == 4:
-    print("Convert Matrix to Dictionary")
+    matrixToDictionary()
 menu()
