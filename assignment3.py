@@ -1,25 +1,25 @@
-def addMatrices():
+def addMatrices(): #O(N^2)
   matrix1 = []
   matrix2 = []
   num_rows = int(input("Enter the number of rows: "))
   num_cols = int(input("Enter the number of columns: "))
   sum_matrix = []
   
-  for row in range(num_rows):
+  for row in range(num_rows): #O(N)
     matrix1.append([])
     print("Enter elements of row",row+1,"of the first matrix:")
     for col in range(num_cols):
       col = int(input())
       matrix1[row].append(col)
 
-  for row in range(num_rows):
+  for row in range(num_rows): #O(N)
     matrix2.append([])
     print("Enter elements of row",row+1,"of the second matrix:")
     for col in range(num_cols):
       col = int(input())
       matrix2[row].append(col)
 
-  for row in range(num_rows):
+  for row in range(num_rows): #O(1)
     sum_row = [matrix1[row][col] + matrix2[row][col] for col in range(num_cols)]
     sum_matrix.append(sum_row)
 
@@ -27,11 +27,11 @@ def addMatrices():
 
 ######################################################################################
 
-def invertDictionary():
+def invertDictionary(): #O(N)
   dict = {}
   num_entries = int(input("Enter the number of dictionary entries: "))
 
-  for i in range(num_entries):
+  for i in range(num_entries): #O(N)
     key = input("Enter a key: ")
     value = input("Enter a value: ")
     dict[key] = value
@@ -41,18 +41,18 @@ def invertDictionary():
 
   inverted_dict = {}
   
-  for key,value in dict.items():
-    if value not in inverted_dict:
-      inverted_dict[value] = [key]
-    else:
-      inverted_dict[value].append(key)
+  for key,value in dict.items(): #O(1)
+    if value not in inverted_dict:     #if value is not in the dict
+      inverted_dict[value] = [key]     #create a "key" with value of "value" and the "value" is list of "keys"
+    else:                              #if value is in the dict
+      inverted_dict[value].append(key) #append key to a list with other keys who have the same value
 
   print("After inverting:")
   print(inverted_dict)
 
 ######################################################################################
 
-def matrixToDictionary():
+def matrixToDictionary(): #O(N)
   users_data = []
   num_users = int(input("Enter the number of the users: "))
   users_dict = {}
@@ -72,7 +72,7 @@ def matrixToDictionary():
 
 ######################################################################################
 
-def checkPalindrome():
+def checkPalindrome(): #O(1)
   text = input("Enter a text to check if it's palindrome: ")
   reversed_text = text[::-1]
   if reversed_text == text:
@@ -82,7 +82,7 @@ def checkPalindrome():
 
 ######################################################################################
 
-def mergeSort(arr):
+def mergeSort(arr): #O(NLogN)
   if len(arr) > 1:
     mid = len(arr) // 2
     left_half = arr[:mid]
@@ -113,6 +113,7 @@ def mergeSort(arr):
         k += 1
 
 ######################################################################################
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
