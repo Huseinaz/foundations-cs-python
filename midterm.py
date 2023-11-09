@@ -13,3 +13,10 @@ def displayMenu():
         +"\t9. Exit\n")
 
 displayMenu()
+
+def menu():
+  choice = int(input("\nChoose a number from the menu: "))
+  if choice == 1:
+    print("Open Tab")
+
+menu()
