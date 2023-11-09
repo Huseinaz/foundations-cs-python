@@ -1,3 +1,10 @@
+def openTab():
+  title = input("Enter the title of the tab: ")
+  url = input("Enter the url of the website: ")
+  print("The title of tab is",title,"with URL",url)
+
+######################################################################################
+
 print("Welcome!")
 print()
 
@@ -17,6 +24,6 @@ displayMenu()
 def menu():
   choice = int(input("\nChoose a number from the menu: "))
   if choice == 1:
-    print("Open Tab")
+    openTab()
 
 menu()
