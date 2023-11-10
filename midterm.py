@@ -1,3 +1,4 @@
+import requests
 open_tabs = []
 
 def openTab():
@@ -32,6 +33,9 @@ def switchTab():
     print("No tabs are open.")
   else:
     tab_to_switch = input("Enter the title of the tab you want to switch to: ")
+    if tab_to_switch == '':
+      r = requests.get(open_tabs[-1][',URL'])
+      print(r.content)
 
 ######################################################################################
 
