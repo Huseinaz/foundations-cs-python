@@ -5,6 +5,7 @@ def openTab():
   url = input("Enter the url of the website: ")
   tab = {"Title":title,",URL":url}
   open_tabs.append(tab)
+  print("The opened tabs are",open_tabs)
 
 ######################################################################################
 
@@ -27,10 +28,9 @@ def closeTab():
 ######################################################################################
 
 print("Welcome!")
-print()
 
 def displayMenu():
-  print("\t1. Open Tab\n"
+  print("\n\t1. Open Tab\n"
         +"\t2. Close Tab\n"
         +"\t3. Switch Tab\n"
         +"\t4. Display All Tabs\n"
@@ -40,13 +40,14 @@ def displayMenu():
         +"\t8. Import Tabs\n"
         +"\t9. Exit\n")
 
-displayMenu()
-
 def menu():
-  choice = int(input("\nChoose a number from the menu: "))
-  if choice == 1:
-    openTab()
-  elif choice == 2:
-    closeTab()
+  choice = 0
+  while choice != 7:
+    displayMenu()
+    choice = int(input("Choose a number from the menu: "))
+    if choice == 1:
+        openTab()
+    elif choice == 2:
+        closeTab()
 
 menu()
