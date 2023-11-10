@@ -13,6 +13,9 @@ def closeTab():
     print("No tabs are open.")
   else:
     tab_to_close = input("Enter the title of the tab you want to close: ")
+    if tab_to_close == '':
+      print("The tab",open_tabs[-1]['Title'],"was closed")
+      open_tabs.remove(open_tabs[-1])
 
 ######################################################################################
 
