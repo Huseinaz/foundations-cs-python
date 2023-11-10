@@ -41,6 +41,8 @@ def switchTab():
         if tab_to_switch == tab["Title"]:
           r = requests.get(tab[',URL'])
           print(r.content)
+      if tab_to_switch != tab["Title"]:
+          print("The tab",tab_to_switch,"is not found")
 
 ######################################################################################
 
