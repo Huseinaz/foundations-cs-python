@@ -28,5 +28,7 @@ def menu():
   choice = int(input("\nChoose a number from the menu: "))
   if choice == 1:
     openTab()
+  elif choice == 2:
+    print("Close Tab")
 
 menu()
