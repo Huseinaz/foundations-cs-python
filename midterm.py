@@ -27,6 +27,12 @@ def closeTab():
 
 ######################################################################################
 
+def switchTab():
+  if len(open_tabs) == 0:
+    print("No tabs are open.")
+
+######################################################################################
+
 print("Welcome!")
 
 def displayMenu():
@@ -50,6 +56,6 @@ def menu():
     elif choice == 2:
         closeTab()
     elif choice == 3:
-        print("Switch Tab")
+        switchTab()
 
 menu()
