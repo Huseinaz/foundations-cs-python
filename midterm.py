@@ -4,7 +4,7 @@ open_tabs = []
 def openTab():
   title = input("Enter the title of the tab: ")
   url = input("Enter the url of the website: ")
-  tab = {"Title":title,",URL":url}
+  tab = {"Title":title,"URL":url}
   open_tabs.append(tab)
   print("The opened tabs are",open_tabs)
 
@@ -34,13 +34,14 @@ def switchTab():
   else:
     tab_to_switch = input("Enter the title of the tab you want to switch to: ")
     if tab_to_switch == '':
-      r = requests.get(open_tabs[-1][',URL'])
+      r = requests.get(open_tabs[-1]['URL']) #reference: https://www.geeksforgeeks.org/python-web-scraping-tutorial/
       print(r.content)
     else:
       for tab in open_tabs:
         if tab_to_switch == tab["Title"]:
-          r = requests.get(tab[',URL'])
+          r = requests.get(tab['URL'])
           print(r.content)
+          break
       if tab_to_switch != tab["Title"]:
           print("The tab",tab_to_switch,"is not found")
 
