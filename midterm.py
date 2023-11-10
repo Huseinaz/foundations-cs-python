@@ -14,8 +14,13 @@ def closeTab():
   else:
     tab_to_close = input("Enter the title of the tab you want to close: ")
     if tab_to_close == '':
-      print("The tab",open_tabs[-1]['Title'],"was closed")
+      print("The tab",open_tabs[-1]['Title'],"is closed")
       open_tabs.remove(open_tabs[-1])
+    else:
+      for tab in open_tabs:
+        if tab_to_close == tab["Title"]:
+          print("The tab",tab_to_close,"is closed")
+          open_tabs.remove(tab)
 
 ######################################################################################
 
@@ -40,6 +45,6 @@ def menu():
   if choice == 1:
     openTab()
   elif choice == 2:
-    print("Close Tab")
+    closeTab()
 
 menu()
