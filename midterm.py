@@ -49,5 +49,7 @@ def menu():
         openTab()
     elif choice == 2:
         closeTab()
+    elif choice == 3:
+        print("Switch Tab")
 
 menu()
