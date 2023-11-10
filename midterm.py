@@ -36,6 +36,11 @@ def switchTab():
     if tab_to_switch == '':
       r = requests.get(open_tabs[-1][',URL'])
       print(r.content)
+    else:
+      for tab in open_tabs:
+        if tab_to_switch == tab["Title"]:
+          r = requests.get(tab[',URL'])
+          print(r.content)
 
 ######################################################################################
 
