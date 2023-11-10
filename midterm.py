@@ -11,6 +11,8 @@ def openTab():
 def closeTab():
   if len(open_tabs) == 0:
     print("No tabs are open.")
+  else:
+    tab_to_close = input("Enter the title of the tab you want to close: ")
 
 ######################################################################################
 
