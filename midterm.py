@@ -21,6 +21,8 @@ def closeTab():
         if tab_to_close == tab["Title"]:
           print("The tab",tab_to_close,"is closed")
           open_tabs.remove(tab)
+      if tab_to_close != tab["Title"]:
+        print("The tab",tab_to_close,"is not found")
 
 ######################################################################################
 
