@@ -71,5 +71,8 @@ def menu():
         closeTab()
     elif choice == 3:
         switchTab()
+    elif choice == 6:
+        clearAllTab()
+
 
 menu()
