@@ -50,6 +50,9 @@ def switchTab():
 def clearAllTab():
   if len(open_tabs) == 0:
     print("No tabs are open.")
+  else:
+    open_tabs.clear() #reference: https://www.programiz.com/python-programming/methods/list/clear
+    print("All tabs are closed")
 
 
 ######################################################################################
