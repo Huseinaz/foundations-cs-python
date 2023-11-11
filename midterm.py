@@ -80,7 +80,7 @@ def displayMenu():
 
 def menu():
   choice = 0
-  while choice != 7:
+  while choice != 9:
     displayMenu()
     choice = int(input("Choose a number from the menu: "))
     if choice == 1:
@@ -94,6 +94,7 @@ def menu():
     elif choice == 8:
         file_path = input("Enter the file path to import from: ")
         importTabs()
+  print("You exit the menu")
 
 
 menu()
