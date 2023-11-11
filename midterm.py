@@ -1,4 +1,7 @@
 import requests
+import pandas as pd
+import csv
+
 open_tabs = []
 
 def openTab():
@@ -53,7 +56,6 @@ def clearAllTab():
   else:
     open_tabs.clear() #reference: https://www.programiz.com/python-programming/methods/list/clear
     print("All tabs are closed")
-
 
 ######################################################################################
 
