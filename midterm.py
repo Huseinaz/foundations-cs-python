@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import csv
+import json
 
 open_tabs = []
 
@@ -59,6 +60,12 @@ def clearAllTab():
 
 ######################################################################################
 
+def saveTabs(file_path):
+  with open(file_path, 'w') as file:
+    file.write(json.dumps(open_tabs, indent=4))
+
+######################################################################################  
+
 def importTabs(file_path):
   data = pd.read_csv(file_path) #reference: https://www.youtube.com/watch?v=9xcY6YDu-Ks
   open_tabs.append(data)
@@ -92,7 +99,7 @@ def menu():
     elif choice == 6:
         clearAllTab()
     elif choice == 7:
-        saveTabs()
+        saveTabs(file_path)
     elif choice == 8:
         file_path = input("Enter the file path to import from: ")
         importTabs()
