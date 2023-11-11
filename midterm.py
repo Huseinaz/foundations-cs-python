@@ -62,8 +62,8 @@ def clearAllTab():
 ######################################################################################
 
 def saveTabs(file_path):
-  with open(os.path.join(file_path), "w") as file:
-    file.write(json.dumps(open_tabs, indent=4))
+  with open(os.path.join(file_path), "w") as file: #https://stackoverflow.com/questions/25778021/how-can-i-save-a-list-of-dictionaries-to-a-file
+    file.write(json.dumps(open_tabs, indent=4)) #https://stackoverflow.com/questions/8024248/telling-python-to-save-a-txt-file-to-a-certain-directory-on-windows-and-mac
 
 ######################################################################################  
 
@@ -104,7 +104,7 @@ def menu():
         saveTabs(file_path)
     elif choice == 8:
         file_path = input("Enter the file path to import from: ")
-        importTabs()
+        importTabs(file_path)
   print("You exit the menu")
 
 
