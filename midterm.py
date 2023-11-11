@@ -60,7 +60,7 @@ def clearAllTab():
 ######################################################################################
 
 def importTabs(file_path):
-  data = pd.read_csv(file_path)
+  data = pd.read_csv(file_path) #reference: https://www.youtube.com/watch?v=9xcY6YDu-Ks
   open_tabs.append(data)
 
 ######################################################################################
