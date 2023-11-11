@@ -83,6 +83,8 @@ def menu():
         switchTab()
     elif choice == 6:
         clearAllTab()
+    elif choice == 8:
+        importTabs()
 
 
 menu()
