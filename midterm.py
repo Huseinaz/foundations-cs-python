@@ -61,7 +61,7 @@ def clearAllTab():
 
 def importTabs(file_path):
   data = pd.read_csv(file_path)
-  
+  open_tabs.append(data)
 
 ######################################################################################
 
@@ -92,6 +92,7 @@ def menu():
     elif choice == 6:
         clearAllTab()
     elif choice == 8:
+        file_path = input("Enter the file path to import from: ")
         importTabs()
 
 
