@@ -91,6 +91,8 @@ def menu():
         switchTab()
     elif choice == 6:
         clearAllTab()
+    elif choice == 7:
+        saveTabs()
     elif choice == 8:
         file_path = input("Enter the file path to import from: ")
         importTabs()
