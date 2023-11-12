@@ -59,7 +59,10 @@ def openNestedTab():
       title = input("Enter the title of the nested tab: ")
       content = input("Enter the content of the nested tab: ")
       nested_tab = {"Title":title,"Content":content}
-      
+      open_tabs.insert(len(title)-1,nested_tab) #https://www.programiz.com/python-programming/methods/list/insert
+      break
+  else:
+    print("No title found with this name.")
 
 ######################################################################################
 
