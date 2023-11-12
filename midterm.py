@@ -55,6 +55,11 @@ def switchTab():
 def displayAllTabs():
   if len(open_tabs) == 0:
     print("No tabs are open")
+  else:
+    print("The title of opened tabs are:")
+    for tab in open_tabs:
+      title = tab["Title"]
+      print(title)
 
 ######################################################################################
 
