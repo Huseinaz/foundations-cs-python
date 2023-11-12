@@ -97,6 +97,8 @@ def menu():
         closeTab()
     elif choice == 3:
         switchTab()
+    elif choice == 5:
+        openNestedTab()
     elif choice == 6:
         clearAllTab()
     elif choice == 7:
