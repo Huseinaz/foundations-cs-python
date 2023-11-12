@@ -54,6 +54,12 @@ def switchTab():
 
 def openNestedTab():
   title = input("Enter the title of the parent tab: ")
+  for tab in open_tabs:
+    if tab['Title'] == title:
+      title = input("Enter the title of the nested tab: ")
+      content = input("Enter the content of the nested tab: ")
+      nested_tab = {"Title":title,"Content":content}
+      
 
 ######################################################################################
 
