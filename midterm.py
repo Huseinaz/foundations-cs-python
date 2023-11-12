@@ -6,7 +6,7 @@ import os
 
 open_tabs = []
 
-def openTab():
+def openTab(): #O(1) constant
   title = input("Enter the title of the tab: ")
   url = input("Enter the url of the website: ")
   tab = {"Title":title,"URL":url}
@@ -15,84 +15,84 @@ def openTab():
 
 ######################################################################################
 
-def closeTab():
-  if len(open_tabs) == 0:
+def closeTab(): #O(n)
+  if len(open_tabs) == 0: #O(1)
     print("No tabs are open.")
   else:
     tab_to_close = input("Enter the title of the tab you want to close: ")
-    if tab_to_close == '':
+    if tab_to_close == '': #O(1)
       print("The tab",open_tabs[-1]['Title'],"is closed")
       open_tabs.remove(open_tabs[-1])
     else:
-      for tab in open_tabs:
+      for tab in open_tabs: #O(n)
         if tab_to_close == tab["Title"]:
           print("The tab",tab_to_close,"is closed")
           open_tabs.remove(tab)
-      if tab_to_close != tab["Title"]:
+      if tab_to_close != tab["Title"]: #O(1)
         print("The tab",tab_to_close,"is not found")
 
 ######################################################################################
 
-def switchTab():
-  if len(open_tabs) == 0:
+def switchTab(): #O(n)
+  if len(open_tabs) == 0: #O(1)
     print("No tabs are open.")
   else:
     tab_to_switch = input("Enter the title of the tab you want to switch to: ")
-    if tab_to_switch == '':
+    if tab_to_switch == '': #O(1)
       r = requests.get(open_tabs[-1]['URL']) #reference: https://www.geeksforgeeks.org/python-web-scraping-tutorial/
       print(r.content)
     else:
-      for tab in open_tabs:
+      for tab in open_tabs: #O(n)
         if tab_to_switch == tab["Title"]:
           r = requests.get(tab['URL'])
           print(r.content)
           break
-      if tab_to_switch != tab["Title"]:
+      if tab_to_switch != tab["Title"]: #O(1)
           print("The tab",tab_to_switch,"is not found")
 
 ######################################################################################
 
-def displayAllTabs():
-  if len(open_tabs) == 0:
+def displayAllTabs(): #O(n)
+  if len(open_tabs) == 0: #O(1)
     print("No tabs are open")
   else:
-    print("The title of opened tabs are:")
-    for tab in open_tabs:
+    print("The title of opened tabs are:") #O(1)
+    for tab in open_tabs: #O(n)
       title = tab["Title"]
       print(title)
 
 ######################################################################################
 
-def openNestedTab():
+def openNestedTab(): #O(n)
   title = input("Enter the title of the parent tab: ")
-  for tab in open_tabs:
-    if tab['Title'] == title:
+  for tab in open_tabs: #O(n)
+    if tab['Title'] == title: #O(1)
       title = input("Enter the title of the nested tab: ")
       content = input("Enter the content of the nested tab: ")
       nested_tab = {"Title":title,"Content":content}
-      open_tabs.insert(len(title)-1,nested_tab) #https://www.programiz.com/python-programming/methods/list/insert
+      open_tabs.insert(len(title)-1,nested_tab) #O(n) .insert() runtime by google #https://www.programiz.com/python-programming/methods/list/insert
       break
-  else:
+  else: #O(1)
     print("No title found with this name.")
 
 ######################################################################################
 
-def clearAllTab():
-  if len(open_tabs) == 0:
+def clearAllTab(): #O(n)
+  if len(open_tabs) == 0: #O(1)
     print("No tabs are open.")
   else:
-    open_tabs.clear() #reference: https://www.programiz.com/python-programming/methods/list/clear
+    open_tabs.clear() #O(n) .clear() runtime by google #reference: https://www.programiz.com/python-programming/methods/list/clear
     print("All tabs are closed")
 
 ######################################################################################
 
-def saveTabs(file_path):
+def saveTabs(file_path): #O(1)
   with open(os.path.join(file_path), "w") as file: #https://stackoverflow.com/questions/25778021/how-can-i-save-a-list-of-dictionaries-to-a-file
     file.write(json.dumps(open_tabs, indent=4)) #https://stackoverflow.com/questions/8024248/telling-python-to-save-a-txt-file-to-a-certain-directory-on-windows-and-mac
 
 ######################################################################################  
 
-def importTabs(file_path):
+def importTabs(file_path): #O(1)
   data = pd.read_csv(file_path) #reference: https://www.youtube.com/watch?v=9xcY6YDu-Ks
   open_tabs.append(data)
 
@@ -100,7 +100,7 @@ def importTabs(file_path):
 
 print("Welcome!")
 
-def displayMenu():
+def displayMenu(): #O(1) constant
   print("\n\t1. Open Tab\n"
         +"\t2. Close Tab\n"
         +"\t3. Switch Tab\n"
@@ -111,7 +111,7 @@ def displayMenu():
         +"\t8. Import Tabs\n"
         +"\t9. Exit\n")
 
-def menu():
+def menu(): #O(1)
   choice = 0
   while choice != 9:
     displayMenu()
