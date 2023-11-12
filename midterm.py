@@ -111,6 +111,8 @@ def menu():
         closeTab()
     elif choice == 3:
         switchTab()
+    elif choice == 4:
+        displayAllTabs()
     elif choice == 5:
         openNestedTab()
     elif choice == 6:
