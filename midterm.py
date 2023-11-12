@@ -52,6 +52,12 @@ def switchTab():
 
 ######################################################################################
 
+def displayAllTabs():
+  if len(open_tabs) == 0:
+    print("No tabs are open")
+
+######################################################################################
+
 def openNestedTab():
   title = input("Enter the title of the parent tab: ")
   for tab in open_tabs:
