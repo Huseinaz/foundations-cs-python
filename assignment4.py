@@ -12,6 +12,17 @@ class LinkedList:
     self.head = None
     self.size = 0
 
+######################################################################################
+
+  def displayNodes(self):
+    current = self.head
+    while current != None:
+      print(current.info, end=" ")
+      current = current.next
+    print("Linked List is empty.")
+
+######################################################################################
+
   def addNode(self):
     
     value = int(input("Enter the node value: "))
@@ -55,6 +66,6 @@ def menu():
       if choice == 'a':
         ll.addNode()
       if choice == 'b':
-        print("Display Nodes")
+        ll.displayNodes()
       
 menu()
