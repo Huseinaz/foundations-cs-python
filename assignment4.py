@@ -10,3 +10,16 @@ def displayMenu():
         +"\t6. Exit\n")
   
 displayMenu()
+
+def menu():
+  choice = 0
+  while choice != 6:
+    choice = eval(input("\nChoose a number from the menu: "))
+    if choice == 1:
+      print("\n\ta. Add Node\n"
+            +"\tb. Display Nodes\n"
+            +"\tc. Search for & Delete Node\n"
+            +"\td. Return to main menu\n")
+      
+      
+menu()
