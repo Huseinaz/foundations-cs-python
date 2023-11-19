@@ -54,5 +54,7 @@ def menu():
       choice = input("\nChoose a letter from the menu: ")
       if choice == 'a':
         ll.addNode()
+      if choice == 'b':
+        print("Display Nodes")
       
 menu()
