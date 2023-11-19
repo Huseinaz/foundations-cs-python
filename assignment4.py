@@ -20,6 +20,8 @@ def menu():
             +"\tb. Display Nodes\n"
             +"\tc. Search for & Delete Node\n"
             +"\td. Return to main menu\n")
-      
+      choice = input("\nChoose a letter from the menu: ")
+      if choice == 'a':
+        print("Add Node")
       
 menu()
