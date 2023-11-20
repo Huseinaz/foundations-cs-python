@@ -19,7 +19,7 @@ class LinkedList:
     while current != None:
       print(current.info, end=" ")
       current = current.next
-    print("Linked List is empty.")
+    print()
 
 ######################################################################################
 
@@ -36,11 +36,9 @@ class LinkedList:
           current = current.next
       current.next = node
 
-ll = LinkedList()
-
 ######################################################################################
 
-def removeNode(self): #https://www.geeksforgeeks.org/python-program-for-deleting-a-node-in-a-linked-list/
+  def removeNode(self): #https://www.geeksforgeeks.org/python-program-for-deleting-a-node-in-a-linked-list/
     
     if self.size == 0:
       print("Linked List is empty.")
@@ -61,6 +59,8 @@ def removeNode(self): #https://www.geeksforgeeks.org/python-program-for-deleting
         return
       prev.next = temp.next
       temp = None
+
+ll = LinkedList()
 
 ######################################################################################
 
@@ -87,12 +87,18 @@ def menu():
             +"\tb. Display Nodes\n"
             +"\tc. Search for & Delete Node\n"
             +"\td. Return to main menu\n")
-      choice = input("\nChoose a letter from the menu: ")
-      if choice == 'a':
-        ll.addNode()
-      if choice == 'b':
-        ll.displayNodes()
-      if choice == 'c':
-        ll.removeNode()
+      choice = ''
+      while choice != 'd':
+        choice = input("\nChoose a letter from the menu: ")
+        if choice == 'a':
+            ll.addNode()
+        elif choice == 'b':
+            ll.displayNodes()
+        elif choice == 'c':
+            ll.removeNode()
+        elif choice != 'd':
+            print("Invalid input.")
+        choice == 1
+    displayMenu()
       
 menu()
