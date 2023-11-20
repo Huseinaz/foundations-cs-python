@@ -75,12 +75,11 @@ def displayMenu():
         +"\t4. Evaluate an Infix Expression\n"
         +"\t5. Graph\n"
         +"\t6. Exit\n")
-  
-displayMenu()
 
 def menu():
   choice = 0
   while choice != 6:
+    displayMenu()
     choice = eval(input("\nChoose a number from the menu: "))
     if choice == 1:
       print("\n\ta. Add Node\n"
@@ -99,6 +98,7 @@ def menu():
         elif choice != 'd':
             print("Invalid input.")
         choice == 1
-    displayMenu()
+    elif choice == 2:
+      print("Check if Palindrome")
       
 menu()
