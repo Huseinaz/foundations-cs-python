@@ -67,5 +67,7 @@ def menu():
         ll.addNode()
       if choice == 'b':
         ll.displayNodes()
+      if choice == 'c':
+        print("Search for & Delete Node")
       
 menu()
