@@ -64,6 +64,45 @@ ll = LinkedList()
 
 ######################################################################################
 
+class Stack:
+
+  def __init__(self):
+    self.head = None
+    self.size = 0
+
+  def isEmpty(self):
+    return self.head == None
+
+  def push(self, value): #to add to the stack
+    node = Node(value)
+    node.next = self.head
+    self.head = node
+    self.size += 1
+
+  def pop(self): #to remove element from the the top of the stack
+    if self.size == 0: #self.isEmpty():
+      print("Cannot pop from an empty stack!")
+    else:
+      current = self.head
+      self.head = self.head.next
+      current.next = None
+      self.size -= 1
+      return current.info
+
+  def palindrome(s):
+    stack = Stack()
+    for i in range(len(s)):
+      stack.push(s[i])
+    rev_str = ''
+    while not stack.isEmpty():
+      rev_str += stack.pop()
+    if s == rev_str:
+      return "Palindrome"
+    else:
+      return "Not a palindrome"
+
+######################################################################################
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
@@ -99,6 +138,7 @@ def menu():
             print("Invalid input.")
         choice == 1
     elif choice == 2:
-      print("Check if Palindrome")
+      s = input("Enter a string: ")
+      print(Stack.palindrome(s))
       
 menu()
