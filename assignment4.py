@@ -40,6 +40,31 @@ ll = LinkedList()
 
 ######################################################################################
 
+def removeNode(self): #https://www.geeksforgeeks.org/python-program-for-deleting-a-node-in-a-linked-list/
+    
+    if self.size == 0:
+      print("Linked List is empty.")
+    else:
+      value = int(input("Enter the number to delete from the list: "))
+      temp = self.head  
+      if (temp is not None): 
+        if (temp.info == value): 
+          self.head = temp.next
+          temp = None
+          return
+      while(temp is not None): 
+        if temp.info == value: 
+          break
+        prev = temp 
+        temp = temp.next
+      if(temp == None): 
+        return
+      prev.next = temp.next
+      temp = None
+
+######################################################################################
+
+
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
 
@@ -68,6 +93,6 @@ def menu():
       if choice == 'b':
         ll.displayNodes()
       if choice == 'c':
-        print("Search for & Delete Node")
+        ll.removeNode()
       
 menu()
