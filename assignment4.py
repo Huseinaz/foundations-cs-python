@@ -103,6 +103,24 @@ class Stack:
 
 ######################################################################################
 
+class Student:
+
+  def __init__(self, name, mideterm_grade, final_grade, good_attitude):
+    self.name = name
+    self.mideterm_grade = mideterm_grade
+    self.final_grade = final_grade
+    self.good_attitude = good_attitude
+
+def addStudent(self):
+  self.name = input("Enter student name: ")
+  self.mideterm_grade = int(input("Enter mideterm grade: "))
+  self.final_grade = int(input("Enter final grade: "))
+  self.good_attitude = bool(input("Enter good attitude: "))
+
+  print(self.name,", midterm_grade: ",self.mideterm_grade,"/100, final_grade: ", self.final_grade,"/100, good_attitude: ", self.good_attitude, sep='')
+
+######################################################################################
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
@@ -146,6 +164,6 @@ def menu():
             +"\tc. Return to main menu\n")
       choice = input("\nChoose a letter from the menu: ")
       if choice == 'a':
-        print("Add a student")
+        addStudent(Student)
       
 menu()
