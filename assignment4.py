@@ -141,6 +141,11 @@ def menu():
       s = input("Enter a string: ")
       print(Stack.palindrome(s))
     elif choice == 3:
-      print("Priority Queue")
+      print("\n\ta. Add a student\n"
+            +"\tb. Interview a student\n"
+            +"\tc. Return to main menu\n")
+      choice = input("\nChoose a letter from the menu: ")
+      if choice == 'a':
+        print("Add a student")
       
 menu()
