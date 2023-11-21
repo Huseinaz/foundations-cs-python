@@ -105,19 +105,83 @@ class Stack:
 
 class Student:
 
-  def __init__(self, name, mideterm_grade, final_grade, good_attitude):
+  def __init__(self, name, midterm_grade, final_grade, good_attitude):
     self.name = name
-    self.mideterm_grade = mideterm_grade
+    self.midterm_grade = midterm_grade
     self.final_grade = final_grade
     self.good_attitude = good_attitude
 
-def addStudent(self):
-  self.name = input("Enter student name: ")
-  self.mideterm_grade = int(input("Enter mideterm grade: "))
-  self.final_grade = int(input("Enter final grade: "))
-  self.good_attitude = bool(input("Enter good attitude: "))
+  # def getName(self):
+  #   return self.name
+  # def getmidtermGrade(self):
+  #   return self.midterm_grade
+  # def getFinalGrade(self):
+  #   return self.final_grade
+  # def getGoodAttitude(self):
+  #   return self.good_attitude
 
-  print(self.name,", midterm_grade: ",self.mideterm_grade,"/100, final_grade: ", self.final_grade,"/100, good_attitude: ", self.good_attitude, sep='')
+  # def setName(self, new_name):
+  #   self.name = new_name
+  # def setMidtermGrade(self, new_midterm_grade):
+  #   self.midterm_grade = new_midterm_grade
+  # def setFinalGrade(self, new_final_grade):
+  #   self.final_grade = new_final_grade
+  # def setGoodAttitude(self, new_good_attitude):
+  #   self.good_attitude = new_good_attitude
+
+def addStudent():
+  name = input("Enter student name: ")
+  midterm_grade = int(input("Enter midterm grade: "))
+  final_grade = int(input("Enter final grade: "))
+  good_attitude = bool(input("Enter good attitude: "))
+
+  new_student = Student(name, midterm_grade, final_grade, good_attitude)
+  return new_student
+
+  # print(self.name,", midterm_grade: ",self.midterm_grade,"/100, final_grade: ", self.final_grade,"/100, good_attitude: ", self.good_attitude, sep='')
+
+class Node:
+
+  def __init__(self, student):
+    self.student = student
+    self.next = None
+
+class PriorityQueue:
+
+  def __init__(self):
+
+    self.head = None
+    self.size = 0
+
+  def displayNodes(self):
+
+    current = self.head
+    while current != None:
+      print(current.student.name,", midterm_grade: ",current.student.midterm_grade,"/100, final_grade: ", current.student.final_grade,"/100, good_attitude: ", current.student.good_attitude, sep='')
+      current = current.next
+
+  def enqueue(self, student):
+
+    node = Node(student)
+    if self.size == 0:
+      self.head = node
+      self.size += 1
+    else:
+      if student.final_grade < self.head.student.final_grade:
+        node.next = self.head
+        self.head = node
+        self.size += 1
+      else:
+        current = self.head
+        previous = current #we can remove this
+        while current != None and current.student.final_grade <= student.final_grade:
+          previous = current
+          current = current.next
+        previous.next = node
+        node.next = current
+        self.size += 1
+
+pq = PriorityQueue()
 
 ######################################################################################
 
@@ -164,6 +228,7 @@ def menu():
             +"\tc. Return to main menu\n")
       choice = input("\nChoose a letter from the menu: ")
       if choice == 'a':
-        addStudent(Student)
+        pq.enqueue(addStudent())
+        pq.displayNodes()
       
 menu()
