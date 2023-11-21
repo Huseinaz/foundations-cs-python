@@ -140,5 +140,7 @@ def menu():
     elif choice == 2:
       s = input("Enter a string: ")
       print(Stack.palindrome(s))
+    elif choice == 3:
+      print("Priority Queue")
       
 menu()
