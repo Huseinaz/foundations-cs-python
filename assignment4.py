@@ -259,5 +259,7 @@ def menu():
         elif choice != 'c':
           print("Invalid input.")
         choice == 3
+    elif choice == 4:
+      print("Evaluate an Infix Expression")
       
 menu()
