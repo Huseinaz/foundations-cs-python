@@ -230,5 +230,7 @@ def menu():
       if choice == 'a':
         pq.enqueue(addStudent())
         pq.displayNodes()
+      elif choice == 'b':
+        print("Interview a student")
       
 menu()
