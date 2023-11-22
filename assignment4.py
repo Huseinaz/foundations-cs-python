@@ -248,11 +248,16 @@ def menu():
       print("\n\ta. Add a student\n"
             +"\tb. Interview a student\n"
             +"\tc. Return to main menu\n")
-      choice = input("\nChoose a letter from the menu: ")
-      if choice == 'a':
-        pq.enqueue(addStudent())
-        pq.displayNodes()
-      elif choice == 'b':
-        pq.dequeue()
+      choice = ''
+      while choice != 'c':
+        choice = input("\nChoose a letter from the menu: ")
+        if choice == 'a':
+          pq.enqueue(addStudent())
+          pq.displayNodes()
+        elif choice == 'b':
+          pq.dequeue()
+        elif choice != 'c':
+          print("Invalid input.")
+        choice == 3
       
 menu()
