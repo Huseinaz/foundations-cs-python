@@ -167,9 +167,16 @@ class PriorityQueue:
       self.head = node
       self.size += 1
     else:
-      if student.final_grade < self.head.student.final_grade:
-        node.next = self.head
-        self.head = node
+      current = self.head
+      previous = None
+      while current != None and current.student.good_attitude:
+        if student.final_grade > self.head.student.final_grade:
+          break
+        elif student.final_grade == self.head.student.final_grade:
+          if student.midterm_grade > self.head.student.midterm_grade:
+            break
+        previous = current
+        current = current.next
         self.size += 1
       else:
         current = self.head
@@ -180,6 +187,21 @@ class PriorityQueue:
         previous.next = node
         node.next = current
         self.size += 1
+
+  def dequeue(self):
+
+    if self.size == 0:
+      print("Your queue is empty, enqueue first.")
+    elif self.size == 1:
+      print("Interview with: ", self.head.student.name)
+      self.head = None
+      self.size -=1
+    else:
+      print("Interview with: ", self.head.student.name)
+      current = self.head
+      self.head = self.head.next
+      current.next = None
+      self.size -= 1
 
 pq = PriorityQueue()
 
@@ -231,6 +253,6 @@ def menu():
         pq.enqueue(addStudent())
         pq.displayNodes()
       elif choice == 'b':
-        print("Interview a student")
+        pq.dequeue()
       
 menu()
