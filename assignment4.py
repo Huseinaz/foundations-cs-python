@@ -326,6 +326,14 @@ def menu():
       str = input("Enter a string infix expression to evaluate : ")
       print(es.evalString(str))
     elif choice == 5:
-      print("Graph")
+      print("\n\ta. Add vertex\n"
+            +"\tb. Add edge\n"
+            +"\tc. Remove vertex\n"
+            +"\td. Remove edge\n"
+            +"\te. Display vertex with a degree of X or more\n"
+            +"\tf. Return to main menu\n")
+      choice = input("\nChoose a letter from the menu: ")
+      if choice == 'a':
+        print("Add vertex")
       
 menu()
