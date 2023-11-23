@@ -357,5 +357,7 @@ def menu():
       if choice == 'a':
         vertex = input("Enter vertex name to add to the graph: ")
         graph.addVertex(vertex)
+      if choice == 'b':
+        print("Add edge")
       
 menu()
