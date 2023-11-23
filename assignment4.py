@@ -111,24 +111,6 @@ class Student:
     self.final_grade = final_grade
     self.good_attitude = good_attitude
 
-  # def getName(self):
-  #   return self.name
-  # def getmidtermGrade(self):
-  #   return self.midterm_grade
-  # def getFinalGrade(self):
-  #   return self.final_grade
-  # def getGoodAttitude(self):
-  #   return self.good_attitude
-
-  # def setName(self, new_name):
-  #   self.name = new_name
-  # def setMidtermGrade(self, new_midterm_grade):
-  #   self.midterm_grade = new_midterm_grade
-  # def setFinalGrade(self, new_final_grade):
-  #   self.final_grade = new_final_grade
-  # def setGoodAttitude(self, new_good_attitude):
-  #   self.good_attitude = new_good_attitude
-
 def addStudent():
   name = input("Enter student name: ")
   midterm_grade = int(input("Enter midterm grade: "))
@@ -137,8 +119,6 @@ def addStudent():
 
   new_student = Student(name, midterm_grade, final_grade, good_attitude)
   return new_student
-
-  # print(self.name,", midterm_grade: ",self.midterm_grade,"/100, final_grade: ", self.final_grade,"/100, good_attitude: ", self.good_attitude, sep='')
 
 class Node:
 
@@ -187,6 +167,8 @@ class PriorityQueue:
         previous.next = node
         node.next = current
         self.size += 1
+
+######################################################################################
 
   def dequeue(self):
 
@@ -270,6 +252,45 @@ es = EvaluateString()
 
 ######################################################################################
 
+class LinkedList:
+
+  def __init__(self):
+    
+    self.head = None
+    self.size = 0
+    
+  def addNode(self, data):
+    
+    new_node = Node(data)
+    new_node.next = self.head
+    self.head = new_node
+    self.size += 1
+  
+  def displayNodes(self):
+    
+    temp = self.head
+    while temp:
+      print(temp.data, end=" -> ")
+      temp = temp.next
+    print("None")
+
+class Graph:
+
+  def __init__(self):
+    self.adj_list = {}
+
+  def addVertex(self, vertex):
+  
+    if vertex not in self.adj_list:
+      self.adj_list[vertex] = LinkedList()
+      return
+    print("Vertex", vertex, "already exists!\n")
+
+
+graph = Graph()
+
+######################################################################################
+
 
 name = input("Please enter your name: ")
 print("Welcome",name,"!")
@@ -334,6 +355,7 @@ def menu():
             +"\tf. Return to main menu\n")
       choice = input("\nChoose a letter from the menu: ")
       if choice == 'a':
-        print("Add vertex")
+        vertex = input("Enter vertex name to add to the graph: ")
+        graph.addVertex(vertex)
       
 menu()
