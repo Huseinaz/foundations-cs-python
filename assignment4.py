@@ -325,5 +325,7 @@ def menu():
     elif choice == 4:
       str = input("Enter a string infix expression to evaluate : ")
       print(es.evalString(str))
+    elif choice == 5:
+      print("Graph")
       
 menu()
