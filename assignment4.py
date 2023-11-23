@@ -286,6 +286,20 @@ class Graph:
       return
     print("Vertex", vertex, "already exists!\n")
 
+######################################################################################
+
+  def addEdge(self, vertex1, vertex2):
+    
+    if vertex1 in self.adj_list and vertex2 in self.adj_list:
+      self.adj_list[vertex1].addNode(vertex2)
+      self.adj_list[vertex2].addNode(vertex1)
+    elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:
+      print("Vertices", vertex1, "and", vertex2,"does not exist to add the edge!\n")
+    elif vertex1 not in self.adj_list:
+      print("Vertex", vertex1, "does not exist to add the edge!\n")
+    else:
+      print("Vertex", vertex2, "does not exist to add the edge!\n")
+
 
 graph = Graph()
 
@@ -358,6 +372,8 @@ def menu():
         vertex = input("Enter vertex name to add to the graph: ")
         graph.addVertex(vertex)
       if choice == 'b':
-        print("Add edge")
+        vertex1 = input("Enter the name of vertex 1 : ")
+        vertex2 = input("Enter the name of vertex 2 : ")
+        graph.addEdge(vertex1, vertex2)
       
 menu()
