@@ -375,5 +375,7 @@ def menu():
         vertex1 = input("Enter the name of vertex 1 : ")
         vertex2 = input("Enter the name of vertex 2 : ")
         graph.addEdge(vertex1, vertex2)
+      if choice == 'c':
+        print("Remove vertex")
       
 menu()
