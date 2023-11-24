@@ -388,5 +388,7 @@ def menu():
       if choice == 'c':
         rmv_vertex = input("Enter the name of vertex to delete: ")
         graph.removeVertex(rmv_vertex)
+      if choice == 'd':
+        print("Remove edge")
       
 menu()
