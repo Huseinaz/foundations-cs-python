@@ -300,6 +300,15 @@ class Graph:
     else:
       print("Vertex", vertex2, "does not exist to add the edge!\n")
 
+######################################################################################
+
+  def removeVertex(self, vertex):
+
+    if vertex in self.adj_list:
+      self.adj_list.pop(vertex)
+    else:
+      print("Vertex", vertex, "does not exist\n")
+
 
 graph = Graph()
 
@@ -372,10 +381,12 @@ def menu():
         vertex = input("Enter vertex name to add to the graph: ")
         graph.addVertex(vertex)
       if choice == 'b':
-        vertex1 = input("Enter the name of vertex 1 : ")
-        vertex2 = input("Enter the name of vertex 2 : ")
+        print("To add edge between 2 vertex enter:")
+        vertex1 = input("The name of vertex 1 : ")
+        vertex2 = input("The name of vertex 2 : ")
         graph.addEdge(vertex1, vertex2)
       if choice == 'c':
-        print("Remove vertex")
+        rmv_vertex = input("Enter the name of vertex to delete: ")
+        graph.removeVertex(rmv_vertex)
       
 menu()
