@@ -252,6 +252,12 @@ es = EvaluateString()
 
 ######################################################################################
 
+class Node:
+
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
 class LinkedList:
 
   def __init__(self):
@@ -265,6 +271,20 @@ class LinkedList:
     new_node.next = self.head
     self.head = new_node
     self.size += 1
+
+  def removeNode(self, data):
+    
+    current = self.head
+    if current.data == data:
+      self.head = current.next
+      self.size -= 1
+    else:
+      while current.next:
+        if current.next.data == data:
+          current.next = current.next.next
+          self.size -= 1
+          break
+        current = current.next
   
   def displayNodes(self):
     
@@ -308,6 +328,20 @@ class Graph:
       self.adj_list.pop(vertex)
     else:
       print("Vertex", vertex, "does not exist\n")
+
+######################################################################################
+
+  def removeEdge(self, vertex1, vertex2):
+
+    if vertex1 in self.adj_list and vertex2 in self.adj_list:
+      self.adj_list[vertex1].removeNode(vertex2)
+      self.adj_list[vertex2].removeNode(vertex1)
+    elif vertex1 not in self.adj_list and vertex2 not in self.adj_list:
+      print("Vertices", vertex1, "and", vertex2, "does not exist to remove the edge!\n")
+    elif vertex1 not in self.adj_list:
+      print("Vertex", vertex1, "does not exist to remove the edge!\n")
+    else:
+      print("Vertex", vertex2, "does not exist to remove the edge!\n")
 
 
 graph = Graph()
@@ -389,6 +423,9 @@ def menu():
         rmv_vertex = input("Enter the name of vertex to delete: ")
         graph.removeVertex(rmv_vertex)
       if choice == 'd':
-        print("Remove edge")
+        print("To remove edge between 2 vertex enter:")
+        rmv_vertex1 = input("The name of vertex 1: ")
+        rmv_vertex2 = input("The name of vertex 2: ")
+        graph.removeEdge(rmv_vertex1, rmv_vertex2)
       
 menu()
