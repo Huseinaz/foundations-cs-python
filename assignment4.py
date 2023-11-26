@@ -362,7 +362,8 @@ def displayMenu():
 
 def menu():
   choice = 0
-  while choice != 6:
+  limit = 0
+  while choice != 6 and limit < 4:
     displayMenu()
     choice = eval(input("\nChoose a number from the menu: "))
     if choice == 1:
@@ -434,6 +435,9 @@ def menu():
         elif choice != 'f':
           print("Invalid input.")
         choice == 5
-    
+    elif choice != 6:
+      print("Invalid input\n")
+      limit += 1
+      print("You have reached",limit,"/ 4 trys\n")
       
 menu()
