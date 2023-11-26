@@ -439,5 +439,6 @@ def menu():
       print("Invalid input\n")
       limit += 1
       print("You have reached",limit,"/ 4 trys\n")
+  print("\nGood Bye!")
       
 menu()
