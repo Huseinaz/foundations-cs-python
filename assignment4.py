@@ -431,6 +431,9 @@ def menu():
           graph.removeEdge(rmv_vertex1, rmv_vertex2)
         if choice == 'e':
           print("Display vertices")
+        elif choice != 'f':
+          print("Invalid input.")
+        choice == 5
     
       
 menu()
