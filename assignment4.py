@@ -410,22 +410,27 @@ def menu():
             +"\td. Remove edge\n"
             +"\te. Display vertex with a degree of X or more\n"
             +"\tf. Return to main menu\n")
-      choice = input("\nChoose a letter from the menu: ")
-      if choice == 'a':
-        vertex = input("Enter vertex name to add to the graph: ")
-        graph.addVertex(vertex)
-      if choice == 'b':
-        print("To add edge between 2 vertex enter:")
-        vertex1 = input("The name of vertex 1 : ")
-        vertex2 = input("The name of vertex 2 : ")
-        graph.addEdge(vertex1, vertex2)
-      if choice == 'c':
-        rmv_vertex = input("Enter the name of vertex to delete: ")
-        graph.removeVertex(rmv_vertex)
-      if choice == 'd':
-        print("To remove edge between 2 vertex enter:")
-        rmv_vertex1 = input("The name of vertex 1: ")
-        rmv_vertex2 = input("The name of vertex 2: ")
-        graph.removeEdge(rmv_vertex1, rmv_vertex2)
+      choice = ''
+      while choice != 'f':
+        choice = input("\nChoose a letter from the menu: ")
+        if choice == 'a':
+          vertex = input("Enter vertex name to add to the graph: ")
+          graph.addVertex(vertex)
+        if choice == 'b':
+          print("To add edge between 2 vertex enter:")
+          vertex1 = input("The name of vertex 1 : ")
+          vertex2 = input("The name of vertex 2 : ")
+          graph.addEdge(vertex1, vertex2)
+        if choice == 'c':
+          rmv_vertex = input("Enter the name of vertex to delete: ")
+          graph.removeVertex(rmv_vertex)
+        if choice == 'd':
+          print("To remove edge between 2 vertex enter:")
+          rmv_vertex1 = input("The name of vertex 1: ")
+          rmv_vertex2 = input("The name of vertex 2: ")
+          graph.removeEdge(rmv_vertex1, rmv_vertex2)
+        if choice == 'e':
+          print("Display vertices")
+    
       
 menu()
